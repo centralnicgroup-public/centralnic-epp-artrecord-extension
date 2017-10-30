@@ -2,12 +2,11 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 <!-- when the namespace version bumps, update this and it will update
     everywhere --><!ENTITY VERSION "0.1">
-<!ENTITY I-D.narten-iana-considerations-rfc2434bis SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.narten-iana-considerations-rfc2434bis.xml">
-<!ENTITY RFC2119 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
-<!ENTITY RFC3688 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3688.xml">
-<!ENTITY RFC5730 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5730.xml">
-<!ENTITY RFC5731 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5731.xml">
-<!ENTITY RFC7451 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7451.xml">
+<!ENTITY RFC2119 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY RFC3688 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3688.xml">
+<!ENTITY RFC5730 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5730.xml">
+<!ENTITY RFC5731 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5731.xml">
+<!ENTITY RFC7451 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7451.xml">
 ]>
 <?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?>
 <?rfc strict="yes" ?>
@@ -41,7 +40,7 @@
       </address>
     </author>
 
-    <date month="April" year="2015"/>
+    <date month="January" year="2017"/>
 
     <area>Applications</area>
     <workgroup>Internet Engineering Task Force</workgroup>
@@ -79,7 +78,7 @@
         the XML documents.</t>
 
         <t>(Note to RFC Editor: remove the following paragraph before publication
-	as an RFC.)</t>
+        as an RFC.)</t>
 
         <t>The XML namespace prefix above contains a version number,
         specifically "&VERSION;". This version number will increment with
@@ -117,17 +116,17 @@
 
       <section title="EPP Query Commands">
         <t>This extension does not add any elements to the EPP &lt;poll&gt; or
-	&lt;check&gt; commands or responses.</t>
+        &lt;check&gt; commands or responses.</t>
 
         <section title="EPP &lt;info&gt; Command">
           <t>This extension defines additional elements for the EPP
           &lt;info&gt; command.</t>
 
-	  <t>When a server receives an &lt;info&gt; command for a domain for which
-	  art record information has been stored, it MAY (depending on server
-	  policy) include a &lt;artRecord:infData&gt; element in the &lt;extension&gt;
-	  element of the response. If present, this element MUST include the following
-	  child elements:</t>
+          <t>When a server receives an &lt;info&gt; command for a domain for which
+          art record information has been stored, it MAY (depending on server
+          policy) include a &lt;artRecord:infData&gt; element in the &lt;extension&gt;
+          element of the response. If present, this element MUST include the following
+          child elements:</t>
 
           <t><list>
                   <t>&lt;artRecord:objectType&gt;</t>
@@ -151,14 +150,14 @@ S:     &lt;/result&gt;
 S:     &lt;resData&gt;
 S:       &lt;domain:infData
 S:         xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-S:         &lt;domain:name&gt;example.com&lt;/domain:name&gt;
+S:         &lt;domain:name&gt;example.art&lt;/domain:name&gt;
 S:         &lt;domain:roid&gt;EXAMPLE1-REP&lt;/domain:roid&gt;
 S:         &lt;domain:status s="ok" /&gt;
 S:         &lt;domain:registrant&gt;jd1234&lt;/domain:registrant&gt;
 S:         &lt;domain:contact type="admin"&gt;sh8013&lt;/domain:contact&gt;
 S:         &lt;domain:contact type="tech"&gt;sh8013&lt;/domain:contact&gt;
 S:         &lt;domain:ns&gt;
-S:           &lt;domain:hostObj&gt;ns1.example.com&lt;/domain:hostObj&gt;
+S:           &lt;domain:hostObj&gt;ns1.example.art&lt;/domain:hostObj&gt;
 S:           &lt;domain:hostObj&gt;ns1.example.net&lt;/domain:hostObj&gt;
 S:         &lt;/domain:ns&gt;
 S:         &lt;domain:clID&gt;ClientX&lt;/domain:clID&gt;
@@ -200,7 +199,7 @@ S: &lt;/epp&gt;
 
       <section title="EPP Transform Commands">
         <t>This extension does not add elements to the EPP &lt;delete&gt;,
-	&lt;renew&gt; or &lt;transfer&gt; commands and responses.</t>
+        &lt;renew&gt; or &lt;transfer&gt; commands and responses.</t>
 
         <section title="EPP &lt;create&gt; Command">
           <t>This extension adds elements to the EPP &lt;create&gt; command.
@@ -210,7 +209,7 @@ S: &lt;/epp&gt;
           MAY include in the &lt;extension&gt; element a &lt;artRecord:create&gt;
           element.</t>
 
-	  <t>This element MUST include the following child elements:</t>
+          <t>This element MUST include the following child elements:</t>
 
           <t><list>
                   <t>&lt;artRecord:objectType&gt;</t>
@@ -231,7 +230,7 @@ C:   &lt;command&gt;
 C:     &lt;create&gt;
 C:       &lt;domain:create
 C:           xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-C:         &lt;domain:name&gt;example.com&lt;/domain:name&gt;
+C:         &lt;domain:name&gt;example.art&lt;/domain:name&gt;
 C:         &lt;domain:period unit="y"&gt;2&lt;/domain:period&gt;
 C:         &lt;domain:ns&gt;
 C:           &lt;domain:hostObj&gt;ns1.example.net&lt;/domain:hostObj&gt;
@@ -248,12 +247,12 @@ C:     &lt;/create&gt;
 C:     &lt;extension&gt;
 C:       &lt;artRecord:create
 C:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1"&gt;
-C: 	&lt;artRecord:objectType&gt;[TBA]&lt;/artRecord:objectType&gt;
-C: 	&lt;artRecord:materialsAndTechniques&gt;
+C:         &lt;artRecord:objectType&gt;[TBA]&lt;/artRecord:objectType&gt;
+C:         &lt;artRecord:materialsAndTechniques&gt;
 C:           [TBA]&lt;/artRecord:materialsAndTechniques&gt;
-C: 	&lt;artRecord:dimensions&gt;[TBA]&lt;/artRecord:dimensions&gt;
-C: 	&lt;artRecord:title&gt;[TBA]&lt;/artRecord:title&gt;
-C: 	&lt;artRecord:dateOrPeriod&gt;[TBA]&lt;/artRecord:dateOrPeriod&gt;
+C:         &lt;artRecord:dimensions&gt;[TBA]&lt;/artRecord:dimensions&gt;
+C:         &lt;artRecord:title&gt;[TBA]&lt;/artRecord:title&gt;
+C:         &lt;artRecord:dateOrPeriod&gt;[TBA]&lt;/artRecord:dateOrPeriod&gt;
 C:         &lt;artRecord:maker&gt;[TBA]&lt;/artRecord:maker&gt;
 C:         &lt;artRecord:reference&gt;[TBA]&lt;/artRecord:reference&gt;
 C:       &lt;/artRecord:create&gt;
@@ -267,13 +266,13 @@ C: &lt;/epp&gt;
 
         <section title="EPP &lt;update&gt; Command">
           <t>This extension adds elements to the EPP &lt;update&gt; command.
-	  No additional elements are defined for the EPP &lt;update&gt; response.</t>
+          No additional elements are defined for the EPP &lt;update&gt; response.</t>
 
           <t>When submitting an &lt;update&gt; command to the server, the client
           MAY include in the &lt;extension&gt; element a &lt;artRecord:update&gt;
           element.</t>
 
-	  <t>This element MUST include the following child elements:</t>
+          <t>This element MUST include the following child elements:</t>
 
           <t><list>
                   <t>&lt;artRecord:objectType&gt;</t>
@@ -294,7 +293,7 @@ C:   &lt;command&gt;
 C:     &lt;update&gt;
 C:       &lt;domain:update
 C:         xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-C:         &lt;domain:name&gt;example.com&lt;/domain:name&gt;
+C:         &lt;domain:name&gt;example.art&lt;/domain:name&gt;
 C:       &lt;/domain:update&gt;
 C:     &lt;/update&gt;
 C:     &lt;extension&gt;
@@ -361,11 +360,7 @@ C: &lt;/epp&gt;
 <figure><artwork>
 BEGIN
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
-
-&lt;!--
-  Copyright 2016 CentralNic Group plc. All rights reserved.
---&gt;
-
+  &lt;!-- Copyright 2016 CentralNic Group plc. All rights reserved. --&gt;
 &lt;schema
   xmlns              = "http://www.w3.org/2001/XMLSchema"
   xmlns:artRecord    = "urn:ietf:params:xml:ns:artRecord-0.1"
@@ -377,11 +372,10 @@ BEGIN
 
   &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0" /&gt;
 
-  &lt;annotation&gt;
-    &lt;documentation&gt;Extensible Provisioning Protocol
-    v1.0 domain name extension schema for Art
-    Records.&lt;/documentation&gt;
-  &lt;/annotation&gt;
+  &lt;annotation&gt;&lt;documentation&gt;
+    Extensible Provisioning Protocol
+    v1.0 domain name extension schema for Art Records.
+  &lt;/documentation&gt;&lt;/annotation&gt;
 
   &lt;!--
   Child elements found in EPP commands and responses
@@ -390,17 +384,36 @@ BEGIN
   &lt;element name="create"  type="artRecord:artRecordType"  /&gt;
   &lt;element name="update"  type="artRecord:artRecordType"  /&gt;
 
-  &lt;complexType name="artRecordType"&gt;
-    &lt;sequence&gt;
-      &lt;element type="artRecord:artRecordToken" name="objectType" /&gt;
-      &lt;element type="artRecord:artRecordToken" name="materialsAndTechniques" /&gt;
-      &lt;element type="artRecord:artRecordToken" name="dimensions" /&gt;
-      &lt;element type="artRecord:artRecordToken" name="title" /&gt;
-      &lt;element type="artRecord:artRecordToken" name="dateOrPeriod" /&gt;
-      &lt;element type="artRecord:artRecordToken" name="maker" /&gt;
-      &lt;element type="artRecord:artRecordToken" name="reference" /&gt;
-    &lt;/sequence&gt;
-  &lt;/complexType&gt;
+  &lt;complexType name="artRecordType"&gt;&lt;sequence&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="objectType" /&gt;
+
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="materialsAndTechniques" /&gt;
+
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="dimensions" /&gt;
+
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="title" /&gt;
+
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="dateOrPeriod" /&gt;
+
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="maker" /&gt;
+
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="reference" /&gt;
+
+  &lt;/sequence&gt;&lt;/complexType&gt;
 
   &lt;simpleType name="artRecordToken"&gt;
     &lt;restriction base="token"&gt;
@@ -408,6 +421,7 @@ BEGIN
       &lt;maxLength value="255" /&gt;
     &lt;/restriction&gt;
   &lt;/simpleType&gt;
+
 &lt;/schema&gt;
 
 END</artwork></figure>
@@ -434,17 +448,17 @@ END</artwork></figure>
         <t>XML: See the "Formal Syntax" section of this document.</t>
       </section>
       <section title="EPP Extension Registry">
-	<t>The EPP extension described in this document should be registered
-	by the IANA in the EPP Extension Registry described in <xref target="RFC7451"/>. The details of the registration are as follows:</t>
-	<t>Name of Extension: EPP Fee Extension</t>
-	<t>Document status: Experimental</t>
-	<t>Reference: (insert reference to RFC version of this document)</t>
-	<t>Registrant Name and Email Address: See the "Author's Address" section
-	of this document.</t>
-	<t>TLDs: any</t>
-	<t>IPR Disclosure: none</t>
-	<t>Status: active</t>
-	<t>Notes: none</t>
+        <t>The EPP extension described in this document should be registered
+        by the IANA in the EPP Extension Registry described in <xref target="RFC7451"/>. The details of the registration are as follows:</t>
+        <t>Name of Extension: EPP Fee Extension</t>
+        <t>Document status: Experimental</t>
+        <t>Reference: (insert reference to RFC version of this document)</t>
+        <t>Registrant Name and Email Address: See the "Author's Address" section
+        of this document.</t>
+        <t>TLDs: any</t>
+        <t>IPR Disclosure: none</t>
+        <t>Status: active</t>
+        <t>Notes: none</t>
       </section>
     </section>
 

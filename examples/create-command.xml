@@ -4,7 +4,7 @@
     <create>
       <domain:create
           xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
-        <domain:name>example.com</domain:name>
+        <domain:name>example.art</domain:name>
         <domain:period unit="y">2</domain:period>
         <domain:ns>
           <domain:hostObj>ns1.example.net</domain:hostObj>
@@ -21,12 +21,12 @@
     <extension>
       <artRecord:create
         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1">
-	<artRecord:objectType>[TBA]</artRecord:objectType>
-	<artRecord:materialsAndTechniques>
+        <artRecord:objectType>[TBA]</artRecord:objectType>
+        <artRecord:materialsAndTechniques>
           [TBA]</artRecord:materialsAndTechniques>
-	<artRecord:dimensions>[TBA]</artRecord:dimensions>
-	<artRecord:title>[TBA]</artRecord:title>
-	<artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
+        <artRecord:dimensions>[TBA]</artRecord:dimensions>
+        <artRecord:title>[TBA]</artRecord:title>
+        <artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
         <artRecord:maker>[TBA]</artRecord:maker>
         <artRecord:reference>[TBA]</artRecord:reference>
       </artRecord:create>

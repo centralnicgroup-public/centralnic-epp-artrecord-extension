@@ -7,23 +7,20 @@
 
   <!ENTITY VERSION "0.1">
 
-  <!ENTITY I-D.narten-iana-considerations-rfc2434bis SYSTEM
-    "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.narten-iana-considerations-rfc2434bis.xml">
-  
   <!ENTITY RFC2119 SYSTEM
-    "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
+    "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
   
   <!ENTITY RFC3688 SYSTEM
-    "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3688.xml">
+    "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3688.xml">
 
   <!ENTITY RFC5730 SYSTEM
-    "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5730.xml">
+    "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5730.xml">
 
   <!ENTITY RFC5731 SYSTEM
-    "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5731.xml">
+    "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5731.xml">
 
   <!ENTITY RFC7451 SYSTEM
-    "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7451.xml">
+    "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7451.xml">
 
 ]>
 
@@ -99,7 +96,7 @@
         the XML documents.</t>
 
         <t>(Note to RFC Editor: remove the following paragraph before publication
-	as an RFC.)</t>
+        as an RFC.)</t>
 
         <t>The XML namespace prefix above contains a version number,
         specifically "&VERSION;". This version number will increment with
@@ -111,7 +108,7 @@
     </section>
 
     <section title="Extension Elements">
-      <t>This document defines several new element, which describe the work of art
+      <t>This document defines several new elements, which describe the work of art
       to which the domain object relates.</t>
 
       <t>The child elements are as follows:</t>
@@ -137,17 +134,17 @@
 
       <section title="EPP Query Commands">
         <t>This extension does not add any elements to the EPP &lt;poll&gt; or
-	&lt;check&gt; commands or responses.</t>
+        &lt;check&gt; commands or responses.</t>
 
         <section title="EPP &lt;info&gt; Command">
           <t>This extension defines additional elements for the EPP
           &lt;info&gt; command.</t>
 
-	  <t>When a server receives an &lt;info&gt; command for a domain for which
-	  art record information has been stored, it MAY (depending on server
-	  policy) include a &lt;artRecord:infData&gt; element in the &lt;extension&gt;
-	  element of the response. If present, this element MUST include the following
-	  child elements:</t>
+          <t>When a server receives an &lt;info&gt; command for a domain for which
+          art record information has been stored, it MAY (depending on server
+          policy) include a &lt;artRecord:infData&gt; element in the &lt;extension&gt;
+          element of the response. If present, this element MUST include the following
+          child elements:</t>
 
           <t><list>
                   <t>&lt;artRecord:objectType&gt;</t>
@@ -171,7 +168,7 @@
 
       <section title="EPP Transform Commands">
         <t>This extension does not add elements to the EPP &lt;delete&gt;,
-	&lt;renew&gt; or &lt;transfer&gt; commands and responses.</t>
+        &lt;renew&gt; or &lt;transfer&gt; commands and responses.</t>
 
         <section title="EPP &lt;create&gt; Command">
           <t>This extension adds elements to the EPP &lt;create&gt; command.
@@ -181,7 +178,7 @@
           MAY include in the &lt;extension&gt; element a &lt;artRecord:create&gt;
           element.</t>
 
-	  <t>This element MUST include the following child elements:</t>
+          <t>This element MUST include the following child elements:</t>
 
           <t><list>
                   <t>&lt;artRecord:objectType&gt;</t>
@@ -203,13 +200,13 @@
 
         <section title="EPP &lt;update&gt; Command">
           <t>This extension adds elements to the EPP &lt;update&gt; command.
-	  No additional elements are defined for the EPP &lt;update&gt; response.</t>
+          No additional elements are defined for the EPP &lt;update&gt; response.</t>
 
           <t>When submitting an &lt;update&gt; command to the server, the client
           MAY include in the &lt;extension&gt; element a &lt;artRecord:update&gt;
           element.</t>
 
-	  <t>This element MUST include the following child elements:</t>
+          <t>This element MUST include the following child elements:</t>
 
           <t><list>
                   <t>&lt;artRecord:objectType&gt;</t>
@@ -298,18 +295,18 @@ END</artwork></figure>
         <t>XML: See the "Formal Syntax" section of this document.</t>
       </section>
       <section title="EPP Extension Registry">
-	<t>The EPP extension described in this document should be registered
-	by the IANA in the EPP Extension Registry described in <xref
-	target="RFC7451"/>. The details of the registration are as follows:</t>
-	<t>Name of Extension: EPP Fee Extension</t>
-	<t>Document status: Experimental</t>
-	<t>Reference: (insert reference to RFC version of this document)</t>
-	<t>Registrant Name and Email Address: See the "Author's Address" section
-	of this document.</t>
-	<t>TLDs: any</t>
-	<t>IPR Disclosure: none</t>
-	<t>Status: active</t>
-	<t>Notes: none</t>
+        <t>The EPP extension described in this document should be registered
+        by the IANA in the EPP Extension Registry described in <xref
+        target="RFC7451"/>. The details of the registration are as follows:</t>
+        <t>Name of Extension: EPP Fee Extension</t>
+        <t>Document status: Experimental</t>
+        <t>Reference: (insert reference to RFC version of this document)</t>
+        <t>Registrant Name and Email Address: See the "Author's Address" section
+        of this document.</t>
+        <t>TLDs: any</t>
+        <t>IPR Disclosure: none</t>
+        <t>Status: active</t>
+        <t>Notes: none</t>
       </section>
     </section>
 

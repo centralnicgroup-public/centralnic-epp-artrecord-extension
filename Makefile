@@ -15,8 +15,8 @@ build:
 
 	xmllint --xinclude draft-brown-artRecord.xml.in > draft-brown-artRecord.xml
 
-	xml2rfc draft-brown-artRecord.xml draft-brown-artRecord.txt
-	xml2rfc draft-brown-artRecord.xml draft-brown-artRecord.html
+	xml2rfc --text draft-brown-artRecord.xml
+	xml2rfc --html draft-brown-artRecord.xml
 
 clean:
 	rm -vf examples/*txt
