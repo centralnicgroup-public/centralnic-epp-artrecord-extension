@@ -31,7 +31,7 @@
     </resData>
     <extension>
       <artRecord:infData
-        xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1">
+        xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2">
         <artRecord:objectType>[TBA]</artRecord:objectType>
         <artRecord:materialsAndTechniques>
           [TBA]</artRecord:materialsAndTechniques>
@@ -39,6 +39,10 @@
         <artRecord:title>[TBA]</artRecord:title>
         <artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
         <artRecord:maker>[TBA]</artRecord:maker>
+        <artRecord:subject>[TBA]</artRecord:subject>
+        <artRecord:inscriptionsAndMarkings>
+          [TBA]</artRecord:inscriptionsAndMarkings>
+        <artRecord:features>[TBA]</artRecord:features>
         <artRecord:reference>[TBA]</artRecord:reference>
       </artRecord:infData>
     </extension>

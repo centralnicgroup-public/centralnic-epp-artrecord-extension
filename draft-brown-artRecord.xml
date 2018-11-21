@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 <!-- when the namespace version bumps, update this and it will update
-    everywhere --><!ENTITY VERSION "0.1">
+    everywhere --><!ENTITY VERSION "0.2">
 <!ENTITY RFC2119 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC3688 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3688.xml">
 <!ENTITY RFC5730 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5730.xml">
@@ -18,7 +18,7 @@
 <?rfc subcompact="no" ?>
 <?rfc comments="yes" ?>
 <?rfc inline="yes" ?>
-<rfc category="exp" docName="draft-brown-epp-artRecord-00" ipr="trust200902">
+<rfc category="exp" docName="draft-brown-epp-artRecord-01" ipr="trust200902">
 
   <front>
     <title abbrev="Art Records Extension">Art Record Extension for
@@ -40,7 +40,7 @@
       </address>
     </author>
 
-    <date month="January" year="2017"/>
+    <date month="November" year="2018"/>
 
     <area>Applications</area>
     <workgroup>Internet Engineering Task Force</workgroup>
@@ -90,7 +90,7 @@
     </section>
 
     <section title="Extension Elements">
-      <t>This document defines several new element, which describe the work of art
+      <t>This document defines several new elements, which describe the work of art
       to which the domain object relates.</t>
 
       <t>The child elements are as follows:</t>
@@ -101,6 +101,10 @@
               <t>&lt;artRecord:dimensions&gt;</t>
               <t>&lt;artRecord:title&gt;</t>
               <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
               <t>&lt;artRecord:maker&gt;</t>
               <t>&lt;artRecord:reference&gt;</t>
       </list></t>
@@ -129,13 +133,17 @@
           child elements:</t>
 
           <t><list>
-                  <t>&lt;artRecord:objectType&gt;</t>
-                  <t>&lt;artRecord:materialsAndTechniques&gt;</t>
-                  <t>&lt;artRecord:dimensions&gt;</t>
-                  <t>&lt;artRecord:title&gt;</t>
-                  <t>&lt;artRecord:dateOrPeriod&gt;</t>
-                  <t>&lt;artRecord:maker&gt;</t>
-                  <t>&lt;artRecord:reference&gt;</t>
+              <t>&lt;artRecord:objectType&gt;</t>
+              <t>&lt;artRecord:materialsAndTechniques&gt;</t>
+              <t>&lt;artRecord:dimensions&gt;</t>
+              <t>&lt;artRecord:title&gt;</t>
+              <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:reference&gt;</t>
           </list></t>
 
           <t>Example &lt;info&gt; response:</t>
@@ -174,7 +182,7 @@ S:       &lt;/domain:infData&gt;
 S:     &lt;/resData&gt;
 S:     &lt;extension&gt;
 S:       &lt;artRecord:infData
-S:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1"&gt;
+S:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2"&gt;
 S:         &lt;artRecord:objectType&gt;[TBA]&lt;/artRecord:objectType&gt;
 S:         &lt;artRecord:materialsAndTechniques&gt;
 S:           [TBA]&lt;/artRecord:materialsAndTechniques&gt;
@@ -182,6 +190,10 @@ S:         &lt;artRecord:dimensions&gt;[TBA]&lt;/artRecord:dimensions&gt;
 S:         &lt;artRecord:title&gt;[TBA]&lt;/artRecord:title&gt;
 S:         &lt;artRecord:dateOrPeriod&gt;[TBA]&lt;/artRecord:dateOrPeriod&gt;
 S:         &lt;artRecord:maker&gt;[TBA]&lt;/artRecord:maker&gt;
+S:         &lt;artRecord:subject&gt;[TBA]&lt;/artRecord:subject&gt;
+S:         &lt;artRecord:inscriptionsAndMarkings&gt;
+S:           [TBA]&lt;/artRecord:inscriptionsAndMarkings&gt;
+S:         &lt;artRecord:features&gt;[TBA]&lt;/artRecord:features&gt;
 S:         &lt;artRecord:reference&gt;[TBA]&lt;/artRecord:reference&gt;
 S:       &lt;/artRecord:infData&gt;
 S:     &lt;/extension&gt;
@@ -212,13 +224,17 @@ S: &lt;/epp&gt;
           <t>This element MUST include the following child elements:</t>
 
           <t><list>
-                  <t>&lt;artRecord:objectType&gt;</t>
-                  <t>&lt;artRecord:materialsAndTechniques&gt;</t>
-                  <t>&lt;artRecord:dimensions&gt;</t>
-                  <t>&lt;artRecord:title&gt;</t>
-                  <t>&lt;artRecord:dateOrPeriod&gt;</t>
-                  <t>&lt;artRecord:maker&gt;</t>
-                  <t>&lt;artRecord:reference&gt;</t>
+              <t>&lt;artRecord:objectType&gt;</t>
+              <t>&lt;artRecord:materialsAndTechniques&gt;</t>
+              <t>&lt;artRecord:dimensions&gt;</t>
+              <t>&lt;artRecord:title&gt;</t>
+              <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:reference&gt;</t>
           </list></t>
 
           <t>Example &lt;create&gt; command:</t>
@@ -246,7 +262,7 @@ C:       &lt;/domain:create&gt;
 C:     &lt;/create&gt;
 C:     &lt;extension&gt;
 C:       &lt;artRecord:create
-C:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1"&gt;
+C:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2"&gt;
 C:         &lt;artRecord:objectType&gt;[TBA]&lt;/artRecord:objectType&gt;
 C:         &lt;artRecord:materialsAndTechniques&gt;
 C:           [TBA]&lt;/artRecord:materialsAndTechniques&gt;
@@ -254,6 +270,10 @@ C:         &lt;artRecord:dimensions&gt;[TBA]&lt;/artRecord:dimensions&gt;
 C:         &lt;artRecord:title&gt;[TBA]&lt;/artRecord:title&gt;
 C:         &lt;artRecord:dateOrPeriod&gt;[TBA]&lt;/artRecord:dateOrPeriod&gt;
 C:         &lt;artRecord:maker&gt;[TBA]&lt;/artRecord:maker&gt;
+C:         &lt;artRecord:subject&gt;[TBA]&lt;/artRecord:subject&gt;
+C:         &lt;artRecord:inscriptionsAndMarkings&gt;
+C:           [TBA]&lt;/artRecord:inscriptionsAndMarkings&gt;
+C:         &lt;artRecord:features&gt;[TBA]&lt;/artRecord:features&gt;
 C:         &lt;artRecord:reference&gt;[TBA]&lt;/artRecord:reference&gt;
 C:       &lt;/artRecord:create&gt;
 C:     &lt;/extension&gt;
@@ -275,13 +295,17 @@ C: &lt;/epp&gt;
           <t>This element MUST include the following child elements:</t>
 
           <t><list>
-                  <t>&lt;artRecord:objectType&gt;</t>
-                  <t>&lt;artRecord:materialsAndTechniques&gt;</t>
-                  <t>&lt;artRecord:dimensions&gt;</t>
-                  <t>&lt;artRecord:title&gt;</t>
-                  <t>&lt;artRecord:dateOrPeriod&gt;</t>
-                  <t>&lt;artRecord:maker&gt;</t>
-                  <t>&lt;artRecord:reference&gt;</t>
+              <t>&lt;artRecord:objectType&gt;</t>
+              <t>&lt;artRecord:materialsAndTechniques&gt;</t>
+              <t>&lt;artRecord:dimensions&gt;</t>
+              <t>&lt;artRecord:title&gt;</t>
+              <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:reference&gt;</t>
           </list></t>
 
           <t>Example &lt;update&gt; command:</t>
@@ -298,7 +322,7 @@ C:       &lt;/domain:update&gt;
 C:     &lt;/update&gt;
 C:     &lt;extension&gt;
 C:     &lt;artRecord:update
-C:       xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1"&gt;
+C:       xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2"&gt;
 C:       &lt;artRecord:objectType&gt;[TBA]&lt;/artRecord:objectType&gt;
 C:       &lt;artRecord:materialsAndTechniques&gt;
 C:         [TBA]&lt;/artRecord:materialsAndTechniques&gt;
@@ -306,6 +330,10 @@ C:       &lt;artRecord:dimensions&gt;[TBA]&lt;/artRecord:dimensions&gt;
 C:       &lt;artRecord:title&gt;[TBA]&lt;/artRecord:title&gt;
 C:       &lt;artRecord:dateOrPeriod&gt;[TBA]&lt;/artRecord:dateOrPeriod&gt;
 C:       &lt;artRecord:maker&gt;[TBA]&lt;/artRecord:maker&gt;
+C:       &lt;artRecord:subject&gt;[TBA]&lt;/artRecord:subject&gt;
+C:       &lt;artRecord:inscriptionsAndMarkings&gt;
+C:         [TBA]&lt;/artRecord:inscriptionsAndMarkings&gt;
+C:       &lt;artRecord:features&gt;[TBA]&lt;/artRecord:features&gt;
 C:       &lt;artRecord:reference&gt;[TBA]&lt;/artRecord:reference&gt;
 C:     &lt;/artRecord:update&gt;
 C:     &lt;/extension&gt;
@@ -360,68 +388,64 @@ C: &lt;/epp&gt;
 <figure><artwork>
 BEGIN
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
-  &lt;!-- Copyright 2016 CentralNic Group plc. All rights reserved. --&gt;
-&lt;schema
-  xmlns              = "http://www.w3.org/2001/XMLSchema"
-  xmlns:artRecord    = "urn:ietf:params:xml:ns:artRecord-0.1"
-  xmlns:eppcom       = "urn:ietf:params:xml:ns:eppcom-1.0"
-  xmlns:domain       = "urn:ietf:params:xml:ns:domain-1.0"
-  targetNamespace    = "urn:ietf:params:xml:ns:artRecord-0.1"
-  elementFormDefault = "qualified"
-&gt;
+&lt;!-- Copyright 2016 CentralNic Group plc. All rights reserved. --&gt;
+&lt;schema elementFormDefault="qualified"
+        targetNamespace="urn:ietf:params:xml:ns:artRecord-0.2"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ns="http://www.w3.org/2001/XMLSchema"
+        xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty"
+        xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+        xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+        xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2"&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0" /&gt;
-
-  &lt;annotation&gt;&lt;documentation&gt;
-    Extensible Provisioning Protocol
-    v1.0 domain name extension schema for Art Records.
-  &lt;/documentation&gt;&lt;/annotation&gt;
+  &lt;annotation&gt;
+    &lt;documentation&gt;Extensible Provisioning Protocol v1.0 domain name extension
+    schema for Art Records.&lt;/documentation&gt;
+  &lt;/annotation&gt;
 
   &lt;!--
   Child elements found in EPP commands and responses
   --&gt;
-  &lt;element name="infData" type="artRecord:artRecordType" /&gt;
-  &lt;element name="create"  type="artRecord:artRecordType"  /&gt;
-  &lt;element name="update"  type="artRecord:artRecordType"  /&gt;
 
-  &lt;complexType name="artRecordType"&gt;&lt;sequence&gt;
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="objectType" /&gt;
+  &lt;element name="infData" type="artRecord:artRecordType"/&gt;
 
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="materialsAndTechniques" /&gt;
+  &lt;element name="create" type="artRecord:artRecordType"/&gt;
 
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="dimensions" /&gt;
+  &lt;element name="update" type="artRecord:artRecordType"/&gt;
 
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="title" /&gt;
+  &lt;complexType name="artRecordType"&gt;
+    &lt;sequence&gt;
+      &lt;element name="objectType" type="artRecord:artRecordToken"/&gt;
 
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="dateOrPeriod" /&gt;
+      &lt;element name="materialsAndTechniques" type="artRecord:artRecordToken"/&gt;
 
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="maker" /&gt;
+      &lt;element name="dimensions" type="artRecord:artRecordToken"/&gt;
 
-    &lt;element
-      type="artRecord:artRecordToken"
-      name="reference" /&gt;
+      &lt;element name="title" type="artRecord:artRecordToken"/&gt;
 
-  &lt;/sequence&gt;&lt;/complexType&gt;
+      &lt;element name="dateOrPeriod" type="artRecord:artRecordToken"/&gt;
+
+      &lt;element name="maker" type="artRecord:artRecordToken"/&gt;
+ 
+      &lt;element name="subject" type="artRecord:artRecordToken"/&gt;
+
+      &lt;element name="inscriptionsAndMarkings" type="artRecord:artRecordToken"/&gt;
+
+      &lt;element name="features" type="artRecord:artRecordToken"/&gt;
+
+      &lt;element name="reference" type="artRecord:artRecordToken"/&gt;
+    &lt;/sequence&gt;
+  &lt;/complexType&gt;
 
   &lt;simpleType name="artRecordToken"&gt;
     &lt;restriction base="token"&gt;
-      &lt;minLength value="0" /&gt;
-      &lt;maxLength value="255" /&gt;
+      &lt;minLength value="0"/&gt;
+
+      &lt;maxLength value="255"/&gt;
     &lt;/restriction&gt;
   &lt;/simpleType&gt;
-
 &lt;/schema&gt;
 
 END</artwork></figure>

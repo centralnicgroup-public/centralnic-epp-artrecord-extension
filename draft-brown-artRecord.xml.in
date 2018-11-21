@@ -5,7 +5,7 @@
   <!-- when the namespace version bumps, update this and it will update
     everywhere -->
 
-  <!ENTITY VERSION "0.1">
+  <!ENTITY VERSION "0.2">
 
   <!ENTITY RFC2119 SYSTEM
     "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
@@ -36,7 +36,7 @@
 <?rfc comments="yes" ?>
 <?rfc inline="yes" ?>
 
-<rfc category="exp" docName="draft-brown-epp-artRecord-00" ipr="trust200902">
+<rfc category="exp" docName="draft-brown-epp-artRecord-01" ipr="trust200902">
 
   <front>
     <title abbrev="Art Records Extension">Art Record Extension for
@@ -58,7 +58,7 @@
       </address>
     </author>
 
-    <date month="January" year="2017" />
+    <date month="November" year="2018" />
 
     <area>Applications</area>
     <workgroup>Internet Engineering Task Force</workgroup>
@@ -120,6 +120,10 @@
               <t>&lt;artRecord:title&gt;</t>
               <t>&lt;artRecord:dateOrPeriod&gt;</t>
               <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
               <t>&lt;artRecord:reference&gt;</t>
       </list></t>
 
@@ -147,13 +151,17 @@
           child elements:</t>
 
           <t><list>
-                  <t>&lt;artRecord:objectType&gt;</t>
-                  <t>&lt;artRecord:materialsAndTechniques&gt;</t>
-                  <t>&lt;artRecord:dimensions&gt;</t>
-                  <t>&lt;artRecord:title&gt;</t>
-                  <t>&lt;artRecord:dateOrPeriod&gt;</t>
-                  <t>&lt;artRecord:maker&gt;</t>
-                  <t>&lt;artRecord:reference&gt;</t>
+              <t>&lt;artRecord:objectType&gt;</t>
+              <t>&lt;artRecord:materialsAndTechniques&gt;</t>
+              <t>&lt;artRecord:dimensions&gt;</t>
+              <t>&lt;artRecord:title&gt;</t>
+              <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:reference&gt;</t>
           </list></t>
 
           <t>Example &lt;info&gt; response:</t>
@@ -181,13 +189,17 @@
           <t>This element MUST include the following child elements:</t>
 
           <t><list>
-                  <t>&lt;artRecord:objectType&gt;</t>
-                  <t>&lt;artRecord:materialsAndTechniques&gt;</t>
-                  <t>&lt;artRecord:dimensions&gt;</t>
-                  <t>&lt;artRecord:title&gt;</t>
-                  <t>&lt;artRecord:dateOrPeriod&gt;</t>
-                  <t>&lt;artRecord:maker&gt;</t>
-                  <t>&lt;artRecord:reference&gt;</t>
+              <t>&lt;artRecord:objectType&gt;</t>
+              <t>&lt;artRecord:materialsAndTechniques&gt;</t>
+              <t>&lt;artRecord:dimensions&gt;</t>
+              <t>&lt;artRecord:title&gt;</t>
+              <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:reference&gt;</t>
           </list></t>
 
           <t>Example &lt;create&gt; command:</t>
@@ -209,13 +221,17 @@
           <t>This element MUST include the following child elements:</t>
 
           <t><list>
-                  <t>&lt;artRecord:objectType&gt;</t>
-                  <t>&lt;artRecord:materialsAndTechniques&gt;</t>
-                  <t>&lt;artRecord:dimensions&gt;</t>
-                  <t>&lt;artRecord:title&gt;</t>
-                  <t>&lt;artRecord:dateOrPeriod&gt;</t>
-                  <t>&lt;artRecord:maker&gt;</t>
-                  <t>&lt;artRecord:reference&gt;</t>
+              <t>&lt;artRecord:objectType&gt;</t>
+              <t>&lt;artRecord:materialsAndTechniques&gt;</t>
+              <t>&lt;artRecord:dimensions&gt;</t>
+              <t>&lt;artRecord:title&gt;</t>
+              <t>&lt;artRecord:dateOrPeriod&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:inscriptionsAndMarkings&gt;</t>
+              <t>&lt;artRecord:subject&gt;</t>
+              <t>&lt;artRecord:features&gt;</t>
+              <t>&lt;artRecord:maker&gt;</t>
+              <t>&lt;artRecord:reference&gt;</t>
           </list></t>
 
           <t>Example &lt;update&gt; command:</t>
@@ -269,7 +285,7 @@
 
 <figure><artwork>
 BEGIN
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="artRecord-0.1.xsd"
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="artRecord-0.2.xsd"
   parse="text"/>
 END</artwork></figure>
 
