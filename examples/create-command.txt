@@ -1,0 +1,40 @@
+C: <?xml version="1.0" encoding="utf-8" standalone="no"?>
+C: <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+C:   <command>
+C:     <create>
+C:       <domain:create
+C:           xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+C:         <domain:name>example.art</domain:name>
+C:         <domain:period unit="y">2</domain:period>
+C:         <domain:ns>
+C:           <domain:hostObj>ns1.example.net</domain:hostObj>
+C:           <domain:hostObj>ns2.example.net</domain:hostObj>
+C:         </domain:ns>
+C:         <domain:registrant>jd1234</domain:registrant>
+C:         <domain:contact type="admin">sh8013</domain:contact>
+C:         <domain:contact type="tech">sh8013</domain:contact>
+C:         <domain:authInfo>
+C:           <domain:pw>2fooBAR</domain:pw>
+C:         </domain:authInfo>
+C:       </domain:create>
+C:     </create>
+C:     <extension>
+C:       <artRecord:create
+C:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2">
+C:         <artRecord:objectType>[TBA]</artRecord:objectType>
+C:         <artRecord:materialsAndTechniques>
+C:           [TBA]</artRecord:materialsAndTechniques>
+C:         <artRecord:dimensions>[TBA]</artRecord:dimensions>
+C:         <artRecord:title>[TBA]</artRecord:title>
+C:         <artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
+C:         <artRecord:maker>[TBA]</artRecord:maker>
+C:         <artRecord:subject>[TBA]</artRecord:subject>
+C:         <artRecord:inscriptionsAndMarkings>
+C:           [TBA]</artRecord:inscriptionsAndMarkings>
+C:         <artRecord:features>[TBA]</artRecord:features>
+C:         <artRecord:reference>[TBA]</artRecord:reference>
+C:       </artRecord:create>
+C:     </extension>
+C:     <clTRID>ABC-12345</clTRID>
+C:   </command>
+C: </epp>
