@@ -4,12 +4,12 @@
 
 Internet Engineering Task Force                                 G. Brown
 Internet-Draft                                      CentralNic Group plc
-Intended status: Experimental                               January 2017
-Expires: July 5, 2017
+Intended status: Experimental                          November 21, 2018
+Expires: May 25, 2019
 
 
   Art Record Extension for the Extensible Provisioning Protocol (EPP)
-                      draft-brown-epp-artRecord-00
+                      draft-brown-epp-artRecord-01
 
 Abstract
 
@@ -24,23 +24,23 @@ Status of This Memo
    Internet-Drafts are working documents of the Internet Engineering
    Task Force (IETF).  Note that other groups may also distribute
    working documents as Internet-Drafts.  The list of current Internet-
-   Drafts is at http://datatracker.ietf.org/drafts/current/.
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
 
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 5, 2017.
+   This Internet-Draft will expire on May 25, 2019.
 
 Copyright Notice
 
-   Copyright (c) 2017 IETF Trust and the persons identified as the
+   Copyright (c) 2018 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
+   (https://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Brown                     Expires July 5, 2017                  [Page 1]
+Brown                     Expires May 25, 2019                  [Page 1]
 
-Internet-Draft            Art Records Extension             January 2017
+Internet-Draft            Art Records Extension            November 2018
 
 
 Table of Contents
@@ -65,17 +65,17 @@ Table of Contents
    2.  Extension Elements  . . . . . . . . . . . . . . . . . . . . .   3
    3.  EPP Command Mapping . . . . . . . . . . . . . . . . . . . . .   3
      3.1.  EPP Query Commands  . . . . . . . . . . . . . . . . . . .   3
-       3.1.1.  EPP <info> Command  . . . . . . . . . . . . . . . . .   3
+       3.1.1.  EPP <info> Command  . . . . . . . . . . . . . . . . .   4
      3.2.  EPP Transform Commands  . . . . . . . . . . . . . . . . .   5
-       3.2.1.  EPP <create> Command  . . . . . . . . . . . . . . . .   5
-       3.2.2.  EPP <update> Command  . . . . . . . . . . . . . . . .   6
-     3.3.  Formal Syntax . . . . . . . . . . . . . . . . . . . . . .   7
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
-     5.1.  XML Namespace . . . . . . . . . . . . . . . . . . . . . .  10
-     5.2.  EPP Extension Registry  . . . . . . . . . . . . . . . . .  10
-   6.  Normative References  . . . . . . . . . . . . . . . . . . . .  11
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  11
+       3.2.1.  EPP <create> Command  . . . . . . . . . . . . . . . .   6
+       3.2.2.  EPP <update> Command  . . . . . . . . . . . . . . . .   7
+     3.3.  Formal Syntax . . . . . . . . . . . . . . . . . . . . . .   9
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  12
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
+     5.1.  XML Namespace . . . . . . . . . . . . . . . . . . . . . .  12
+     5.2.  EPP Extension Registry  . . . . . . . . . . . . . . . . .  12
+   6.  Normative References  . . . . . . . . . . . . . . . . . . . .  13
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
 
 1.  Introduction
 
@@ -95,7 +95,7 @@ Table of Contents
    implementation.
 
    "artRecord" is used as an abbreviation for
-   "urn:ietf:params:xml:ns:artRecord-0.1".  The XML namespace prefix
+   "urn:ietf:params:xml:ns:artRecord-0.2".  The XML namespace prefix
    "artRecord" is used, but implementations MUST NOT depend on it and
    instead employ a proper namespace-aware XML parser and serializer to
    interpret and output the XML documents.
@@ -104,14 +104,14 @@ Table of Contents
    publication as an RFC.)
 
    The XML namespace prefix above contains a version number,
-   specifically "0.1".  This version number will increment with
+   specifically "0.2".  This version number will increment with
    successive versions of this document, and will reach 1.0 if and when
 
 
 
-Brown                     Expires July 5, 2017                  [Page 2]
+Brown                     Expires May 25, 2019                  [Page 2]
 
-Internet-Draft            Art Records Extension             January 2017
+Internet-Draft            Art Records Extension            November 2018
 
 
    this document is published as an RFC.  This permits clients to
@@ -119,8 +119,8 @@ Internet-Draft            Art Records Extension             January 2017
 
 2.  Extension Elements
 
-   This document defines several new element, which describe the work of
-   art to which the domain object relates.
+   This document defines several new elements, which describe the work
+   of art to which the domain object relates.
 
    The child elements are as follows:
 
@@ -133,6 +133,14 @@ Internet-Draft            Art Records Extension             January 2017
       <artRecord:title>
 
       <artRecord:dateOrPeriod>
+
+      <artRecord:maker>
+
+      <artRecord:inscriptionsAndMarkings>
+
+      <artRecord:subject>
+
+      <artRecord:features>
 
       <artRecord:maker>
 
@@ -151,6 +159,17 @@ Internet-Draft            Art Records Extension             January 2017
    This extension does not add any elements to the EPP <poll> or <check>
    commands or responses.
 
+
+
+
+
+
+
+Brown                     Expires May 25, 2019                  [Page 3]
+
+Internet-Draft            Art Records Extension            November 2018
+
+
 3.1.1.  EPP <info> Command
 
    This extension defines additional elements for the EPP <info>
@@ -162,14 +181,6 @@ Internet-Draft            Art Records Extension             January 2017
    element of the response.  If present, this element MUST include the
    following child elements:
 
-
-
-
-Brown                     Expires July 5, 2017                  [Page 3]
-
-Internet-Draft            Art Records Extension             January 2017
-
-
       <artRecord:objectType>
 
       <artRecord:materialsAndTechniques>
@@ -179,6 +190,14 @@ Internet-Draft            Art Records Extension             January 2017
       <artRecord:title>
 
       <artRecord:dateOrPeriod>
+
+      <artRecord:maker>
+
+      <artRecord:inscriptionsAndMarkings>
+
+      <artRecord:subject>
+
+      <artRecord:features>
 
       <artRecord:maker>
 
@@ -199,6 +218,14 @@ Internet-Draft            Art Records Extension             January 2017
    S:         <domain:roid>EXAMPLE1-REP</domain:roid>
    S:         <domain:status s="ok" />
    S:         <domain:registrant>jd1234</domain:registrant>
+
+
+
+Brown                     Expires May 25, 2019                  [Page 4]
+
+Internet-Draft            Art Records Extension            November 2018
+
+
    S:         <domain:contact type="admin">sh8013</domain:contact>
    S:         <domain:contact type="tech">sh8013</domain:contact>
    S:         <domain:ns>
@@ -218,16 +245,8 @@ Internet-Draft            Art Records Extension             January 2017
    S:       </domain:infData>
    S:     </resData>
    S:     <extension>
-
-
-
-Brown                     Expires July 5, 2017                  [Page 4]
-
-Internet-Draft            Art Records Extension             January 2017
-
-
    S:       <artRecord:infData
-   S:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1">
+   S:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2">
    S:         <artRecord:objectType>[TBA]</artRecord:objectType>
    S:         <artRecord:materialsAndTechniques>
    S:           [TBA]</artRecord:materialsAndTechniques>
@@ -235,6 +254,10 @@ Internet-Draft            Art Records Extension             January 2017
    S:         <artRecord:title>[TBA]</artRecord:title>
    S:         <artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
    S:         <artRecord:maker>[TBA]</artRecord:maker>
+   S:         <artRecord:subject>[TBA]</artRecord:subject>
+   S:         <artRecord:inscriptionsAndMarkings>
+   S:           [TBA]</artRecord:inscriptionsAndMarkings>
+   S:         <artRecord:features>[TBA]</artRecord:features>
    S:         <artRecord:reference>[TBA]</artRecord:reference>
    S:       </artRecord:infData>
    S:     </extension>
@@ -249,6 +272,15 @@ Internet-Draft            Art Records Extension             January 2017
 
    This extension does not add elements to the EPP <delete>, <renew> or
    <transfer> commands and responses.
+
+
+
+
+
+Brown                     Expires May 25, 2019                  [Page 5]
+
+Internet-Draft            Art Records Extension            November 2018
+
 
 3.2.1.  EPP <create> Command
 
@@ -272,17 +304,39 @@ Internet-Draft            Art Records Extension             January 2017
 
       <artRecord:maker>
 
+      <artRecord:inscriptionsAndMarkings>
+
+      <artRecord:subject>
+
+      <artRecord:features>
+
+      <artRecord:maker>
+
       <artRecord:reference>
 
-
-
-
-Brown                     Expires July 5, 2017                  [Page 5]
-
-Internet-Draft            Art Records Extension             January 2017
-
-
    Example <create> command:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Brown                     Expires May 25, 2019                  [Page 6]
+
+Internet-Draft            Art Records Extension            November 2018
+
 
    C: <?xml version="1.0" encoding="utf-8" standalone="no"?>
    C: <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
@@ -306,7 +360,7 @@ Internet-Draft            Art Records Extension             January 2017
    C:     </create>
    C:     <extension>
    C:       <artRecord:create
-   C:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1">
+   C:         xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2">
    C:         <artRecord:objectType>[TBA]</artRecord:objectType>
    C:         <artRecord:materialsAndTechniques>
    C:           [TBA]</artRecord:materialsAndTechniques>
@@ -314,6 +368,10 @@ Internet-Draft            Art Records Extension             January 2017
    C:         <artRecord:title>[TBA]</artRecord:title>
    C:         <artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
    C:         <artRecord:maker>[TBA]</artRecord:maker>
+   C:         <artRecord:subject>[TBA]</artRecord:subject>
+   C:         <artRecord:inscriptionsAndMarkings>
+   C:           [TBA]</artRecord:inscriptionsAndMarkings>
+   C:         <artRecord:features>[TBA]</artRecord:features>
    C:         <artRecord:reference>[TBA]</artRecord:reference>
    C:       </artRecord:create>
    C:     </extension>
@@ -329,14 +387,14 @@ Internet-Draft            Art Records Extension             January 2017
    When submitting an <update> command to the server, the client MAY
    include in the <extension> element a <artRecord:update> element.
 
-   This element MUST include the following child elements:
 
 
-
-Brown                     Expires July 5, 2017                  [Page 6]
+Brown                     Expires May 25, 2019                  [Page 7]
 
-Internet-Draft            Art Records Extension             January 2017
+Internet-Draft            Art Records Extension            November 2018
 
+
+   This element MUST include the following child elements:
 
       <artRecord:objectType>
 
@@ -350,9 +408,47 @@ Internet-Draft            Art Records Extension             January 2017
 
       <artRecord:maker>
 
+      <artRecord:inscriptionsAndMarkings>
+
+      <artRecord:subject>
+
+      <artRecord:features>
+
+      <artRecord:maker>
+
       <artRecord:reference>
 
    Example <update> command:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Brown                     Expires May 25, 2019                  [Page 8]
+
+Internet-Draft            Art Records Extension            November 2018
+
 
    C: <?xml version="1.0" encoding="utf-8" standalone="no"?>
    C: <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
@@ -365,7 +461,7 @@ Internet-Draft            Art Records Extension             January 2017
    C:     </update>
    C:     <extension>
    C:     <artRecord:update
-   C:       xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.1">
+   C:       xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2">
    C:       <artRecord:objectType>[TBA]</artRecord:objectType>
    C:       <artRecord:materialsAndTechniques>
    C:         [TBA]</artRecord:materialsAndTechniques>
@@ -373,6 +469,10 @@ Internet-Draft            Art Records Extension             January 2017
    C:       <artRecord:title>[TBA]</artRecord:title>
    C:       <artRecord:dateOrPeriod>[TBA]</artRecord:dateOrPeriod>
    C:       <artRecord:maker>[TBA]</artRecord:maker>
+   C:       <artRecord:subject>[TBA]</artRecord:subject>
+   C:       <artRecord:inscriptionsAndMarkings>
+   C:         [TBA]</artRecord:inscriptionsAndMarkings>
+   C:       <artRecord:features>[TBA]</artRecord:features>
    C:       <artRecord:reference>[TBA]</artRecord:reference>
    C:     </artRecord:update>
    C:     </extension>
@@ -387,13 +487,6 @@ Internet-Draft            Art Records Extension             January 2017
    the object mapping suitable for automated validation of EPP XML
    instances.
 
-
-
-Brown                     Expires July 5, 2017                  [Page 7]
-
-Internet-Draft            Art Records Extension             January 2017
-
-
    Copyright (c) 2015 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
 
@@ -403,6 +496,15 @@ Internet-Draft            Art Records Extension             January 2017
 
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
+
+
+
+
+
+Brown                     Expires May 25, 2019                  [Page 9]
+
+Internet-Draft            Art Records Extension            November 2018
+
 
    o  Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in
@@ -431,10 +533,10 @@ Internet-Draft            Art Records Extension             January 2017
      <!-- Copyright 2016 CentralNic Group plc. All rights reserved. -->
    <schema
      xmlns              = "http://www.w3.org/2001/XMLSchema"
-     xmlns:artRecord    = "urn:ietf:params:xml:ns:artRecord-0.1"
+     xmlns:artRecord    = "urn:ietf:params:xml:ns:artRecord-0.2"
      xmlns:eppcom       = "urn:ietf:params:xml:ns:eppcom-1.0"
      xmlns:domain       = "urn:ietf:params:xml:ns:domain-1.0"
-     targetNamespace    = "urn:ietf:params:xml:ns:artRecord-0.1"
+     targetNamespace    = "urn:ietf:params:xml:ns:artRecord-0.2"
      elementFormDefault = "qualified"
    >
 
@@ -442,14 +544,6 @@ Internet-Draft            Art Records Extension             January 2017
 
      <annotation><documentation>
        Extensible Provisioning Protocol
-
-
-
-Brown                     Expires July 5, 2017                  [Page 8]
-
-Internet-Draft            Art Records Extension             January 2017
-
-
        v1.0 domain name extension schema for Art Records.
      </documentation></annotation>
 
@@ -459,6 +553,14 @@ Internet-Draft            Art Records Extension             January 2017
      <element name="infData" type="artRecord:artRecordType" />
      <element name="create"  type="artRecord:artRecordType"  />
      <element name="update"  type="artRecord:artRecordType"  />
+
+
+
+
+Brown                     Expires May 25, 2019                 [Page 10]
+
+Internet-Draft            Art Records Extension            November 2018
+
 
      <complexType name="artRecordType"><sequence>
        <element
@@ -487,6 +589,18 @@ Internet-Draft            Art Records Extension             January 2017
 
        <element
          type="artRecord:artRecordToken"
+         name="subject" />
+
+       <element
+         type="artRecord:artRecordToken"
+         name="inscriptionsAndMarkings" />
+
+       <element
+         type="artRecord:artRecordToken"
+         name="features" />
+
+       <element
+         type="artRecord:artRecordToken"
          name="reference" />
 
      </sequence></complexType>
@@ -496,15 +610,15 @@ Internet-Draft            Art Records Extension             January 2017
          <minLength value="0" />
          <maxLength value="255" />
        </restriction>
-     </simpleType>
 
 
 
-
-Brown                     Expires July 5, 2017                  [Page 9]
+Brown                     Expires May 25, 2019                 [Page 11]
 
-Internet-Draft            Art Records Extension             January 2017
+Internet-Draft            Art Records Extension            November 2018
 
+
+     </simpleType>
 
    </schema>
 
@@ -526,7 +640,7 @@ Internet-Draft            Art Records Extension             January 2017
    conforming to a registry mechanism described in [RFC3688].  The
    folllowing URI assignment is requested of the IANA:
 
-   URI: urn:ietf:params:xml:ns:artRecord-0.1
+   URI: urn:ietf:params:xml:ns:artRecord-0.2
 
    Registrant Contact: See the "Author's Address" section of this
    document.
@@ -552,15 +666,15 @@ Internet-Draft            Art Records Extension             January 2017
 
    IPR Disclosure: none
 
-   Status: active
 
 
 
-
-Brown                     Expires July 5, 2017                 [Page 10]
+Brown                     Expires May 25, 2019                 [Page 12]
 
-Internet-Draft            Art Records Extension             January 2017
+Internet-Draft            Art Records Extension            November 2018
 
+
+   Status: active
 
    Notes: none
 
@@ -611,6 +725,4 @@ Author's Address
 
 
 
-
-
-Brown                     Expires July 5, 2017                 [Page 11]
+Brown                     Expires May 25, 2019                 [Page 13]

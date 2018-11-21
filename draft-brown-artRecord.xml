@@ -388,64 +388,80 @@ C: &lt;/epp&gt;
 <figure><artwork>
 BEGIN
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;!-- Copyright 2016 CentralNic Group plc. All rights reserved. --&gt;
-&lt;schema elementFormDefault="qualified"
-        targetNamespace="urn:ietf:params:xml:ns:artRecord-0.2"
-        xmlns="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ns="http://www.w3.org/2001/XMLSchema"
-        xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty"
-        xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
-        xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
-        xmlns:artRecord="urn:ietf:params:xml:ns:artRecord-0.2"&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;!-- Copyright 2016 CentralNic Group plc. All rights reserved. --&gt;
+&lt;schema
+  xmlns              = "http://www.w3.org/2001/XMLSchema"
+  xmlns:artRecord    = "urn:ietf:params:xml:ns:artRecord-0.2"
+  xmlns:eppcom       = "urn:ietf:params:xml:ns:eppcom-1.0"
+  xmlns:domain       = "urn:ietf:params:xml:ns:domain-1.0"
+  targetNamespace    = "urn:ietf:params:xml:ns:artRecord-0.2"
+  elementFormDefault = "qualified"
+&gt;
 
-  &lt;annotation&gt;
-    &lt;documentation&gt;Extensible Provisioning Protocol v1.0 domain name extension
-    schema for Art Records.&lt;/documentation&gt;
-  &lt;/annotation&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0" /&gt;
+
+  &lt;annotation&gt;&lt;documentation&gt;
+    Extensible Provisioning Protocol
+    v1.0 domain name extension schema for Art Records.
+  &lt;/documentation&gt;&lt;/annotation&gt;
 
   &lt;!--
   Child elements found in EPP commands and responses
   --&gt;
+  &lt;element name="infData" type="artRecord:artRecordType" /&gt;
+  &lt;element name="create"  type="artRecord:artRecordType"  /&gt;
+  &lt;element name="update"  type="artRecord:artRecordType"  /&gt;
 
-  &lt;element name="infData" type="artRecord:artRecordType"/&gt;
+  &lt;complexType name="artRecordType"&gt;&lt;sequence&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="objectType" /&gt;
 
-  &lt;element name="create" type="artRecord:artRecordType"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="materialsAndTechniques" /&gt;
 
-  &lt;element name="update" type="artRecord:artRecordType"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="dimensions" /&gt;
 
-  &lt;complexType name="artRecordType"&gt;
-    &lt;sequence&gt;
-      &lt;element name="objectType" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="title" /&gt;
 
-      &lt;element name="materialsAndTechniques" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="dateOrPeriod" /&gt;
 
-      &lt;element name="dimensions" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="maker" /&gt;
 
-      &lt;element name="title" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="subject" /&gt;
 
-      &lt;element name="dateOrPeriod" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="inscriptionsAndMarkings" /&gt;
 
-      &lt;element name="maker" type="artRecord:artRecordToken"/&gt;
- 
-      &lt;element name="subject" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="features" /&gt;
 
-      &lt;element name="inscriptionsAndMarkings" type="artRecord:artRecordToken"/&gt;
+    &lt;element
+      type="artRecord:artRecordToken"
+      name="reference" /&gt;
 
-      &lt;element name="features" type="artRecord:artRecordToken"/&gt;
-
-      &lt;element name="reference" type="artRecord:artRecordToken"/&gt;
-    &lt;/sequence&gt;
-  &lt;/complexType&gt;
+  &lt;/sequence&gt;&lt;/complexType&gt;
 
   &lt;simpleType name="artRecordToken"&gt;
     &lt;restriction base="token"&gt;
-      &lt;minLength value="0"/&gt;
-
-      &lt;maxLength value="255"/&gt;
+      &lt;minLength value="0" /&gt;
+      &lt;maxLength value="255" /&gt;
     &lt;/restriction&gt;
   &lt;/simpleType&gt;
+
 &lt;/schema&gt;
 
 END</artwork></figure>
